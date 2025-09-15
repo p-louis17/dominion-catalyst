@@ -47,6 +47,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Dominion Consulting custom colors
+        gold: {
+          DEFAULT: "hsl(var(--gold-accent))",
+          light: "hsl(var(--gold-light))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        "consulting-navy": "hsl(var(--consulting-navy))",
+        "service-card": "hsl(var(--service-card))",
+        "hero-bg": "hsl(var(--hero-bg))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -80,10 +89,41 @@ export default {
             height: "0",
           },
         },
+        "fade-in-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "scale-in": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.95)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+        "gold-pulse": {
+          "0%, 100%": {
+            boxShadow: "0 0 0 0 hsl(var(--gold-accent) / 0.7)",
+          },
+          "50%": {
+            boxShadow: "0 0 0 10px hsl(var(--gold-accent) / 0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in-up": "fade-in-up 0.8s ease-out",
+        "scale-in": "scale-in 0.6s ease-out",
+        "gold-pulse": "gold-pulse 2s infinite",
       },
     },
   },
