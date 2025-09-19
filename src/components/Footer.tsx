@@ -8,12 +8,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-                <span className="text-gold-foreground font-bold text-xl">D</span>
+              <div className="w-10 h-10 bg-brand-green rounded-lg flex items-center justify-center">
+                <span className="text-brand-green-foreground font-bold text-xl">D</span>
               </div>
               <div className="text-2xl font-bold">
                 <span className="text-foreground">Dominion</span>
-                <span className="text-gold ml-1">Consulting</span>
+                <span className="text-brand-green ml-1">Consulting</span>
               </div>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
@@ -30,9 +30,9 @@ const Footer = () => {
                 <a
                   key={index}
                   href={href}
-                  className="w-10 h-10 bg-service-card hover:bg-gold/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                  className="w-10 h-10 bg-service-card hover:bg-brand-green/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
                 >
-                  <Icon className="w-5 h-5 text-muted-foreground group-hover:text-gold" />
+                  <Icon className="w-5 h-5 text-muted-foreground group-hover:text-brand-green" />
                 </a>
               ))}
             </div>
@@ -40,7 +40,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold text-gold mb-4">Our Services</h3>
+            <h3 className="text-lg font-semibold text-brand-green mb-4">Our Services</h3>
             <ul className="space-y-2">
               {[
                 "Website Development",
@@ -52,7 +52,7 @@ const Footer = () => {
                 <li key={service}>
                   <a
                     href="#services"
-                    className="text-muted-foreground hover:text-gold transition-colors duration-300"
+                    className="text-muted-foreground hover:text-brand-green transition-colors duration-300"
                   >
                     {service}
                   </a>
@@ -63,18 +63,18 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-gold mb-4">Contact Info</h3>
+            <h3 className="text-lg font-semibold text-brand-green mb-4">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-gold" />
+                <Phone className="w-4 h-4 text-brand-green" />
                 <span className="text-muted-foreground">+250 123 456 789</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-gold" />
+                <Mail className="w-4 h-4 text-brand-green" />
                 <span className="text-muted-foreground">info@dominionconsulting.rw</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="w-4 h-4 text-gold" />
+                <MapPin className="w-4 h-4 text-brand-green" />
                 <span className="text-muted-foreground">Kigali, Rwanda</span>
               </div>
             </div>
@@ -88,10 +88,10 @@ const Footer = () => {
               © 2024 Dominion Consulting. All rights reserved.
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors duration-300">
+              <a href="#" className="text-muted-foreground hover:text-brand-green transition-colors duration-300">
                 Privacy Policy
               </a>
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors duration-300">
+              <a href="#" className="text-muted-foreground hover:text-brand-green transition-colors duration-300">
                 Terms of Service
               </a>
             </div>

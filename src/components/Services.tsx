@@ -44,7 +44,7 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">Our </span>
-              <span className="text-gold">Services</span>
+              <span className="text-brand-green">Services</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We specialize in delivering integrated creative and strategic solutions 
@@ -61,12 +61,12 @@ const Services = () => {
                 style={{"--delay": `${index * 100}ms`} as React.CSSProperties}
               >
                 {/* Icon */}
-                <div className="w-16 h-16 bg-gold/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold/30 transition-colors duration-300">
-                  <service.icon className="w-8 h-8 text-gold" />
+                <div className="w-16 h-16 bg-brand-green/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-green/30 transition-colors duration-300">
+                  <service.icon className="w-8 h-8 text-brand-green" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-gold transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-brand-green transition-colors duration-300">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -77,7 +77,7 @@ const Services = () => {
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-gold rounded-full mr-3"></div>
+                      <div className="w-1.5 h-1.5 bg-brand-green rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}
@@ -86,7 +86,7 @@ const Services = () => {
                 {/* CTA */}
                 <Button 
                   variant="ghost" 
-                  className="group-hover:text-gold group-hover:bg-gold/10 transition-all duration-300 p-0"
+                  className="group-hover:text-brand-green group-hover:bg-brand-green/10 transition-all duration-300 p-0"
                 >
                   Learn More
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -99,7 +99,7 @@ const Services = () => {
           <div className="bg-service-card rounded-2xl p-8 lg:p-12">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gold">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-brand-green">
                   Ready to Transform Your Business?
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -108,7 +108,7 @@ const Services = () => {
                 </p>
                 <Button 
                   size="lg" 
-                  className="bg-gold hover:bg-gold-light text-gold-foreground font-semibold"
+                  className="bg-brand-green hover:bg-brand-green-light text-brand-green-foreground font-semibold"
                 >
                   Get Free Consultation
                   <ArrowRight className="ml-2 w-5 h-5" />

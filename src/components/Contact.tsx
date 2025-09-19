@@ -12,7 +12,7 @@ const Contact = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">Get In </span>
-              <span className="text-gold">Touch</span>
+              <span className="text-brand-green">Touch</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Ready to transform your business? Let's discuss how we can help you achieve 
@@ -24,7 +24,7 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold mb-6 text-gold">Let's Start a Conversation</h3>
+                <h3 className="text-2xl font-bold mb-6 text-brand-green">Let's Start a Conversation</h3>
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   Whether you're looking to enhance your digital presence, develop a strategic marketing plan, 
                   or need comprehensive business consulting, we're here to help you succeed.
@@ -33,9 +33,9 @@ const Contact = () => {
 
               {/* Contact methods */}
               <div className="space-y-6">
-                <div className="flex items-center space-x-4 p-4 bg-service-card rounded-lg hover:bg-gold/10 transition-colors duration-300">
-                  <div className="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-gold" />
+                <div className="flex items-center space-x-4 p-4 bg-service-card rounded-lg hover:bg-brand-green/10 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-brand-green/20 rounded-lg flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-brand-green" />
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">Phone</div>
@@ -43,9 +43,9 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 p-4 bg-service-card rounded-lg hover:bg-gold/10 transition-colors duration-300">
-                  <div className="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-gold" />
+                <div className="flex items-center space-x-4 p-4 bg-service-card rounded-lg hover:bg-brand-green/10 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-brand-green/20 rounded-lg flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-brand-green" />
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">Email</div>
@@ -53,9 +53,9 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 p-4 bg-service-card rounded-lg hover:bg-gold/10 transition-colors duration-300">
-                  <div className="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-gold" />
+                <div className="flex items-center space-x-4 p-4 bg-service-card rounded-lg hover:bg-brand-green/10 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-brand-green/20 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-brand-green" />
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">Location</div>
@@ -66,7 +66,7 @@ const Contact = () => {
 
               {/* Working hours */}
               <div className="bg-service-card p-6 rounded-xl">
-                <h4 className="font-semibold text-gold mb-4">Working Hours</h4>
+                <h4 className="font-semibold text-brand-green mb-4">Working Hours</h4>
                 <div className="space-y-2 text-muted-foreground">
                   <div className="flex justify-between">
                     <span>Monday - Friday</span>
@@ -86,7 +86,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="bg-service-card p-8 rounded-xl">
-              <h3 className="text-xl font-bold mb-6 text-gold">Send us a Message</h3>
+              <h3 className="text-xl font-bold mb-6 text-brand-green">Send us a Message</h3>
               
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
@@ -97,7 +97,7 @@ const Contact = () => {
                     <Input 
                       id="firstName"
                       placeholder="John"
-                      className="bg-background border-border focus:border-gold"
+                      className="bg-background border-border focus:border-brand-green"
                     />
                   </div>
                   <div>
@@ -107,7 +107,7 @@ const Contact = () => {
                     <Input 
                       id="lastName"
                       placeholder="Doe"
-                      className="bg-background border-border focus:border-gold"
+                      className="bg-background border-border focus:border-brand-green"
                     />
                   </div>
                 </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                     id="email"
                     type="email"
                     placeholder="john@example.com"
-                    className="bg-background border-border focus:border-gold"
+                    className="bg-background border-border focus:border-brand-green"
                   />
                 </div>
 
@@ -131,7 +131,7 @@ const Contact = () => {
                   <Input 
                     id="company"
                     placeholder="Your Company"
-                    className="bg-background border-border focus:border-gold"
+                    className="bg-background border-border focus:border-brand-green"
                   />
                 </div>
 
@@ -141,7 +141,7 @@ const Contact = () => {
                   </label>
                   <select 
                     id="service"
-                    className="w-full p-3 bg-background border border-border rounded-md focus:border-gold focus:outline-none text-foreground"
+                    className="w-full p-3 bg-background border border-border rounded-md focus:border-brand-green focus:outline-none text-foreground"
                   >
                     <option value="">Select a service</option>
                     <option value="website">Website Design & Development</option>
@@ -161,14 +161,14 @@ const Contact = () => {
                     id="message"
                     placeholder="Tell us about your project and how we can help..."
                     rows={5}
-                    className="bg-background border-border focus:border-gold"
+                    className="bg-background border-border focus:border-brand-green"
                   />
                 </div>
 
                 <Button 
                   type="submit"
                   size="lg"
-                  className="w-full bg-gold hover:bg-gold-light text-gold-foreground font-semibold"
+                  className="w-full bg-brand-green hover:bg-brand-green-light text-brand-green-foreground font-semibold"
                 >
                   Send Message
                   <Send className="ml-2 w-5 h-5" />

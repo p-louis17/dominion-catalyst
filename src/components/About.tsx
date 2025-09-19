@@ -10,7 +10,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">About </span>
-              <span className="text-gold">Dominion Consulting</span>
+              <span className="text-brand-green">Dominion Consulting</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We are a dynamic Rwanda-based consultancy dedicated to helping businesses 
@@ -31,7 +31,7 @@ const About = () => {
               </div>
               {/* Floating card */}
               <div className="absolute -bottom-6 -right-6 bg-card p-6 rounded-xl border border-border shadow-lg max-w-xs">
-                <div className="text-2xl font-bold text-gold mb-1">Professional Excellence</div>
+                <div className="text-2xl font-bold text-brand-green mb-1">Professional Excellence</div>
                 <div className="text-sm text-muted-foreground">Delivering measurable results through strategic innovation</div>
               </div>
             </div>
@@ -41,10 +41,10 @@ const About = () => {
               {/* Vision */}
               <div className="bg-service-card p-8 rounded-xl hover:bg-gradient-to-br hover:from-service-card hover:to-consulting-navy transition-all duration-500">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mr-4">
-                    <Eye className="w-6 h-6 text-gold" />
+                  <div className="w-12 h-12 bg-brand-green/20 rounded-lg flex items-center justify-center mr-4">
+                    <Eye className="w-6 h-6 text-brand-green" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gold">Our Vision</h3>
+                  <h3 className="text-2xl font-bold text-brand-green">Our Vision</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
                   To be the go-to consulting partner for innovative, results-driven business 
@@ -55,10 +55,10 @@ const About = () => {
               {/* Mission */}
               <div className="bg-service-card p-8 rounded-xl hover:bg-gradient-to-br hover:from-service-card hover:to-consulting-navy transition-all duration-500">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mr-4">
-                    <Target className="w-6 h-6 text-gold" />
+                  <div className="w-12 h-12 bg-brand-green/20 rounded-lg flex items-center justify-center mr-4">
+                    <Target className="w-6 h-6 text-brand-green" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gold">Our Mission</h3>
+                  <h3 className="text-2xl font-bold text-brand-green">Our Mission</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
                   To empower brands with creative strategies, professional execution, and 
@@ -74,8 +74,8 @@ const About = () => {
                   { title: "Integrity", desc: "Transparent partnerships" },
                   { title: "Results", desc: "Measurable outcomes" },
                 ].map((value, index) => (
-                  <div key={value.title} className="text-center p-4 bg-muted/10 rounded-lg hover:bg-gold/10 transition-colors duration-300">
-                    <div className="font-semibold text-gold mb-1">{value.title}</div>
+                  <div key={value.title} className="text-center p-4 bg-muted/10 rounded-lg hover:bg-brand-green/10 transition-colors duration-300">
+                    <div className="font-semibold text-brand-green mb-1">{value.title}</div>
                     <div className="text-sm text-muted-foreground">{value.desc}</div>
                   </div>
                 ))}

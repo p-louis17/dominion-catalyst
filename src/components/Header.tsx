@@ -19,12 +19,12 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gold rounded-lg flex items-center justify-center">
-              <span className="text-gold-foreground font-bold text-lg">D</span>
+            <div className="w-8 h-8 bg-brand-green rounded-lg flex items-center justify-center">
+              <span className="text-brand-green-foreground font-bold text-lg">D</span>
             </div>
             <div className="text-xl font-bold">
               <span className="text-foreground">Dominion</span>
-              <span className="text-gold ml-1">Consulting</span>
+              <span className="text-brand-green ml-1">Consulting</span>
             </div>
           </div>
 
@@ -34,7 +34,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-gold transition-colors duration-300 font-medium"
+                className="text-muted-foreground hover:text-brand-green transition-colors duration-300 font-medium"
               >
                 {item.name}
               </a>
@@ -43,7 +43,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-gold hover:bg-gold-light text-gold-foreground font-semibold">
+            <Button className="bg-brand-green hover:bg-brand-green-light text-brand-green-foreground font-semibold">
               Get Started
             </Button>
           </div>
@@ -69,13 +69,13 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-gold transition-colors duration-300 font-medium"
+                  className="text-muted-foreground hover:text-brand-green transition-colors duration-300 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <Button className="bg-gold hover:bg-gold-light text-gold-foreground font-semibold mt-4">
+              <Button className="bg-brand-green hover:bg-brand-green-light text-brand-green-foreground font-semibold mt-4">
                 Get Started
               </Button>
             </nav>

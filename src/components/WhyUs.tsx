@@ -36,7 +36,7 @@ const WhyUs = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">Why Choose </span>
-              <span className="text-gold">Dominion Consulting</span>
+              <span className="text-brand-green">Dominion Consulting</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We stand out as your ideal consulting partner through our unique approach 
@@ -49,25 +49,25 @@ const WhyUs = () => {
             {reasons.map((reason, index) => (
               <div 
                 key={reason.title}
-                className="relative bg-service-card p-8 rounded-xl border border-border hover:border-gold/30 transition-all duration-500 group"
+                className="relative bg-service-card p-8 rounded-xl border border-border hover:border-brand-green/30 transition-all duration-500 group"
               >
                 {/* Background decoration */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gold/10 to-transparent rounded-xl transform rotate-12"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-green/10 to-transparent rounded-xl transform rotate-12"></div>
                 
                 {/* Content */}
                 <div className="relative">
                   {/* Icon */}
-                  <div className="w-16 h-16 bg-gold/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold/30 transition-colors duration-300">
-                    <reason.icon className="w-8 h-8 text-gold" />
+                  <div className="w-16 h-16 bg-brand-green/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-green/30 transition-colors duration-300">
+                    <reason.icon className="w-8 h-8 text-brand-green" />
                   </div>
 
                   {/* Badge */}
-                  <div className="inline-block bg-gold/20 text-gold px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  <div className="inline-block bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium mb-4">
                     {reason.highlight}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-gold transition-colors duration-300">
+                  <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-brand-green transition-colors duration-300">
                     {reason.title}
                   </h3>
 
@@ -81,9 +81,9 @@ const WhyUs = () => {
           </div>
 
           {/* Stats section */}
-          <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 lg:p-12">
+          <div className="bg-gradient-to-r from-brand-green/10 to-brand-green/5 rounded-2xl p-8 lg:p-12">
             <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-gold mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-brand-green mb-4">
                 Our Track Record Speaks for Itself
               </h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -99,7 +99,7 @@ const WhyUs = () => {
                 { number: "24/7", label: "Support Available", desc: "Always here for you" }
               ].map((stat, index) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-gold mb-2">
+                  <div className="text-3xl md:text-4xl font-bold text-brand-green mb-2">
                     {stat.number}
                   </div>
                   <div className="font-semibold text-foreground mb-1">

@@ -6,54 +6,54 @@
 
 @layer base {
   :root {
-    /* Primary color palette - Deep sophisticated tones */
-    --background: 215 27% 10%;
+    /* Primary color palette - Based on Dominion brand colors */
+    --background: 180 45% 15%;  /* Deep teal background */
     --foreground: 0 0% 98%;
 
-    --card: 215 25% 12%;
+    --card: 180 40% 18%;  /* Slightly lighter teal for cards */
     --card-foreground: 0 0% 98%;
 
-    --popover: 215 25% 12%;
+    --popover: 180 40% 18%;
     --popover-foreground: 0 0% 98%;
 
-    /* Gold accent system - Professional consulting aesthetic */
-    --primary: 45 86% 58%;
-    --primary-foreground: 215 27% 10%;
+    /* Green accent system - Dominion brand green */
+    --primary: 120 55% 45%;  /* Dominion brand green */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 215 20% 18%;
+    --secondary: 180 35% 20%;  /* Muted teal */
     --secondary-foreground: 0 0% 95%;
 
-    --muted: 215 15% 15%;
-    --muted-foreground: 217 10% 65%;
+    --muted: 180 30% 22%;
+    --muted-foreground: 180 15% 65%;
 
-    --accent: 45 86% 58%;
-    --accent-foreground: 215 27% 10%;
+    --accent: 120 55% 45%;  /* Bright green accent */
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 15% 20%;
-    --input: 215 15% 20%;
-    --ring: 45 86% 58%;
+    --border: 180 25% 25%;
+    --input: 180 25% 25%;
+    --ring: 120 55% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom consulting theme colors */
-    --hero-bg: 215 30% 8%;
-    --gold-accent: 45 86% 58%;
-    --gold-light: 45 86% 70%;
-    --text-gold: 45 86% 65%;
-    --consulting-navy: 215 35% 12%;
-    --service-card: 215 20% 14%;
+    /* Custom Dominion brand colors */
+    --hero-bg: 180 50% 12%;  /* Deep brand teal */
+    --brand-green: 120 55% 45%;  /* Main brand green */
+    --brand-green-light: 120 50% 55%;  /* Lighter green */
+    --text-green: 120 50% 50%;  /* Text green */
+    --consulting-teal: 180 45% 15%;  /* Primary teal */
+    --service-card: 180 35% 20%;  /* Service card background */
     
-    /* Gradients for elegant effects */
-    --gradient-hero: linear-gradient(135deg, hsl(215 30% 8%), hsl(215 25% 12%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 86% 58%), hsl(45 86% 70%));
-    --gradient-card: linear-gradient(135deg, hsl(215 20% 14%), hsl(215 15% 16%));
+    /* Gradients using brand colors */
+    --gradient-hero: linear-gradient(135deg, hsl(180 50% 12%), hsl(180 40% 18%));
+    --gradient-green: linear-gradient(135deg, hsl(120 55% 45%), hsl(120 50% 55%));
+    --gradient-card: linear-gradient(135deg, hsl(180 35% 20%), hsl(180 30% 22%));
     
-    /* Shadows with gold glow */
-    --shadow-gold: 0 10px 30px -10px hsl(45 86% 58% / 0.3);
-    --shadow-elegant: 0 25px 50px -12px hsl(215 30% 5% / 0.6);
+    /* Shadows with green glow */
+    --shadow-green: 0 10px 30px -10px hsl(120 55% 45% / 0.3);
+    --shadow-elegant: 0 25px 50px -12px hsl(180 50% 8% / 0.6);
     
     /* Animation variables */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -76,17 +76,17 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Light mode variant - keeping the sophisticated consulting aesthetic */
+  /* Light mode variant - using lighter Dominion brand colors */
   .light {
     --background: 0 0% 98%;
-    --foreground: 215 25% 15%;
+    --foreground: 180 45% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
-    --consulting-navy: 215 45% 15%;
-    --service-card: 0 0% 97%;
-    --hero-bg: 215 25% 95%;
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%), hsl(215 15% 92%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 97%), hsl(215 10% 95%));
+    --card-foreground: 180 45% 15%;
+    --consulting-teal: 180 45% 15%;
+    --service-card: 180 10% 97%;
+    --hero-bg: 180 15% 95%;
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%), hsl(180 15% 92%));
+    --gradient-card: linear-gradient(135deg, hsl(180 5% 97%), hsl(180 10% 95%));
   }
 }
 
@@ -99,7 +99,7 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
   
-  /* Custom scrollbar for elegant feel */
+  /* Custom scrollbar with brand colors */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -109,12 +109,12 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--gold-accent) / 0.3);
+    background: hsl(var(--brand-green) / 0.3);
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--gold-accent) / 0.5);
+    background: hsl(var(--brand-green) / 0.5);
   }
 }
 
@@ -124,12 +124,12 @@
     background: var(--gradient-hero);
   }
   
-  .text-gold {
-    color: hsl(var(--text-gold));
+  .text-green {
+    color: hsl(var(--text-green));
   }
   
-  .border-gold {
-    border-color: hsl(var(--gold-accent) / 0.3);
+  .border-green {
+    border-color: hsl(var(--brand-green) / 0.3);
   }
   
   /* Service card hover effects */
@@ -140,17 +140,17 @@
   
   .service-card:hover {
     background: var(--gradient-card);
-    box-shadow: var(--shadow-gold);
+    box-shadow: var(--shadow-green);
     transform: translateY(-5px);
   }
   
-  /* Gold accent animations */
-  .gold-accent {
-    color: hsl(var(--gold-accent));
+  /* Green accent animations */
+  .green-accent {
+    color: hsl(var(--brand-green));
   }
   
-  .gold-glow {
-    box-shadow: var(--shadow-gold);
+  .green-glow {
+    box-shadow: var(--shadow-green);
   }
   
   /* Consulting-specific animations */
