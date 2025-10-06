@@ -5,10 +5,10 @@ import servicesIllustration from "@/assets/services-illustration.jpg";
 const Services = () => {
   const services = [
     {
-      icon: Globe,
-      title: "Website Design & Development",
-      description: "Professional, user-friendly, and responsive websites designed to boost digital visibility and credibility.",
-      features: ["Responsive Design", "SEO Optimization", "Custom Development", "Performance Optimization"]
+      icon: TrendingUp,
+      title: "Strategic Marketing",
+      description: "Tailored campaigns and market-driven strategies that position your brand for measurable success.",
+      features: ["Market Analysis", "Campaign Strategy", "Digital Marketing", "Performance Tracking"]
     },
     {
       icon: Palette,
@@ -17,22 +17,22 @@ const Services = () => {
       features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Print Materials"]
     },
     {
-      icon: TrendingUp,
-      title: "Strategic Marketing",
-      description: "Tailored campaigns and market-driven strategies that position your brand for measurable success.",
-      features: ["Market Analysis", "Campaign Strategy", "Digital Marketing", "Performance Tracking"]
-    },
-    {
-      icon: Users,
-      title: "Social Media Management",
-      description: "We create engaging content, manage communities, and track performance to grow your online presence.",
-      features: ["Content Creation", "Community Management", "Analytics", "Influencer Partnerships"]
+      icon: Globe,
+      title: "Website Design & Development",
+      description: "Professional, user-friendly, and responsive websites designed to boost digital visibility and credibility.",
+      features: ["Responsive Design", "SEO Optimization", "Custom Development", "Performance Optimization"]
     },
     {
       icon: Camera,
       title: "Events Management & Audiovisual",
       description: "Complete event planning and execution supported by photography, videography, and livestreaming solutions.",
       features: ["Event Planning", "Photography", "Videography", "Live Streaming"]
+    },
+    {
+      icon: Users,
+      title: "Social Media Management",
+      description: "We create engaging content, manage communities, and track performance to grow your online presence.",
+      features: ["Content Creation", "Community Management", "Analytics", "Influencer Partnerships"]
     }
   ];
 
