@@ -32,7 +32,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email to Dominion Consulting
     const emailResponse = await resend.emails.send({
       from: "Dominion Consulting <onboarding@resend.dev>",
-      to: ["info@dominionconsulting.rw"],
+      to: ["andrew@dominion-consultancy.com"],
       replyTo: email,
       subject: `New Contact Form Submission - ${service}`,
       html: `
