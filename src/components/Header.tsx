@@ -5,6 +5,14 @@ import { Menu, X } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
   const navigation = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
@@ -43,7 +51,10 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-brand-green hover:bg-brand-green-light text-brand-green-foreground font-semibold">
+            <Button 
+              onClick={scrollToContact}
+              className="bg-brand-green hover:bg-brand-green-light text-brand-green-foreground font-semibold"
+            >
               Get Started
             </Button>
           </div>
@@ -75,7 +86,10 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Button className="bg-brand-green hover:bg-brand-green-light text-brand-green-foreground font-semibold mt-4">
+              <Button 
+                onClick={scrollToContact}
+                className="bg-brand-green hover:bg-brand-green-light text-brand-green-foreground font-semibold mt-4"
+              >
                 Get Started
               </Button>
             </nav>

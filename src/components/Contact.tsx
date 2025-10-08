@@ -1,9 +1,60 @@
+import { useState, FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    service: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you as soon as possible.",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        service: "",
+        message: "",
+      });
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact us directly at info@dominionconsulting.rw",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,7 +139,7 @@ const Contact = () => {
             <div className="bg-service-card p-8 rounded-xl">
               <h3 className="text-xl font-bold mb-6 text-brand-green">Send us a Message</h3>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
@@ -97,6 +148,9 @@ const Contact = () => {
                     <Input 
                       id="firstName"
                       placeholder="John"
+                      required
+                      value={formData.firstName}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                       className="bg-background border-border focus:border-brand-green"
                     />
                   </div>
@@ -107,6 +161,9 @@ const Contact = () => {
                     <Input 
                       id="lastName"
                       placeholder="Doe"
+                      required
+                      value={formData.lastName}
+                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                       className="bg-background border-border focus:border-brand-green"
                     />
                   </div>
@@ -120,6 +177,9 @@ const Contact = () => {
                     id="email"
                     type="email"
                     placeholder="john@example.com"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="bg-background border-border focus:border-brand-green"
                   />
                 </div>
@@ -131,6 +191,8 @@ const Contact = () => {
                   <Input 
                     id="company"
                     placeholder="Your Company"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="bg-background border-border focus:border-brand-green"
                   />
                 </div>
@@ -141,15 +203,18 @@ const Contact = () => {
                   </label>
                   <select 
                     id="service"
+                    required
+                    value={formData.service}
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full p-3 bg-background border border-border rounded-md focus:border-brand-green focus:outline-none text-foreground"
                   >
                     <option value="">Select a service</option>
-                    <option value="website">Website Design & Development</option>
-                    <option value="branding">Creative Branding Solutions</option>
-                    <option value="marketing">Strategic Marketing</option>
-                    <option value="social">Social Media Management</option>
-                    <option value="events">Events Management</option>
-                    <option value="consultation">General Consultation</option>
+                    <option value="Strategic Marketing">Strategic Marketing</option>
+                    <option value="Creative Branding Solutions">Creative Branding Solutions</option>
+                    <option value="Website Design & Development">Website Design & Development</option>
+                    <option value="Events Management & Audiovisual">Events Management & Audiovisual</option>
+                    <option value="Social Media Management">Social Media Management</option>
+                    <option value="General Consultation">General Consultation</option>
                   </select>
                 </div>
 
@@ -161,6 +226,9 @@ const Contact = () => {
                     id="message"
                     placeholder="Tell us about your project and how we can help..."
                     rows={5}
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="bg-background border-border focus:border-brand-green"
                   />
                 </div>
@@ -168,9 +236,10 @@ const Contact = () => {
                 <Button 
                   type="submit"
                   size="lg"
+                  disabled={isSubmitting}
                   className="w-full bg-brand-green hover:bg-brand-green-light text-brand-green-foreground font-semibold"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 w-5 h-5" />
                 </Button>
               </form>
