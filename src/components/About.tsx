@@ -18,65 +18,65 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Image */}
-            <div className="relative">
+            <div className="relative mb-12 lg:mb-0">
               <div className="relative overflow-hidden rounded-2xl">
                 <img 
                   src={consultingTeam} 
                   alt="Dominion Consulting professional team"
-                  className="w-full h-[500px] object-cover transform hover:scale-105 transition-transform duration-700"
+                  className="w-full h-64 md:h-96 lg:h-[500px] object-cover transform hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               {/* Floating card */}
-              <div className="absolute -bottom-6 -right-6 bg-card p-6 rounded-xl border border-border shadow-lg max-w-xs">
-                <div className="text-2xl font-bold text-brand-green mb-1">Professional Excellence</div>
-                <div className="text-sm text-muted-foreground">Delivering measurable results through strategic innovation</div>
+              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-card p-4 md:p-6 rounded-xl border border-border shadow-lg max-w-[200px] md:max-w-xs">
+                <div className="text-lg md:text-2xl font-bold text-brand-green mb-1">Professional Excellence</div>
+                <div className="text-xs md:text-sm text-muted-foreground">Delivering measurable results through strategic innovation</div>
               </div>
             </div>
 
             {/* Content */}
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {/* Vision */}
-              <div className="bg-service-card p-8 rounded-xl hover:bg-gradient-to-br hover:from-service-card hover:to-consulting-navy transition-all duration-500">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-brand-green/20 rounded-lg flex items-center justify-center mr-4">
-                    <Eye className="w-6 h-6 text-brand-green" />
+              <div className="bg-service-card p-6 md:p-8 rounded-xl hover:bg-gradient-to-br hover:from-service-card hover:to-consulting-navy transition-all duration-500">
+                <div className="flex items-center mb-3 md:mb-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-brand-green/20 rounded-lg flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                    <Eye className="w-5 h-5 md:w-6 md:h-6 text-brand-green" />
                   </div>
-                  <h3 className="text-2xl font-bold text-brand-green">Our Vision</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-brand-green">Our Vision</h3>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   To be the go-to consulting partner for innovative, results-driven business 
                   growth solutions in Rwanda and beyond.
                 </p>
               </div>
 
               {/* Mission */}
-              <div className="bg-service-card p-8 rounded-xl hover:bg-gradient-to-br hover:from-service-card hover:to-consulting-navy transition-all duration-500">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-brand-green/20 rounded-lg flex items-center justify-center mr-4">
-                    <Target className="w-6 h-6 text-brand-green" />
+              <div className="bg-service-card p-6 md:p-8 rounded-xl hover:bg-gradient-to-br hover:from-service-card hover:to-consulting-navy transition-all duration-500">
+                <div className="flex items-center mb-3 md:mb-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-brand-green/20 rounded-lg flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                    <Target className="w-5 h-5 md:w-6 md:h-6 text-brand-green" />
                   </div>
-                  <h3 className="text-2xl font-bold text-brand-green">Our Mission</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-brand-green">Our Mission</h3>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   To empower brands with creative strategies, professional execution, and 
                   measurable impact that foster sustainable success.
                 </p>
               </div>
 
               {/* Values */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
                 {[
                   { title: "Innovation", desc: "Cutting-edge solutions" },
                   { title: "Excellence", desc: "Uncompromising quality" },
                   { title: "Integrity", desc: "Transparent partnerships" },
                   { title: "Results", desc: "Measurable outcomes" },
                 ].map((value, index) => (
-                  <div key={value.title} className="text-center p-4 bg-muted/10 rounded-lg hover:bg-brand-green/10 transition-colors duration-300">
-                    <div className="font-semibold text-brand-green mb-1">{value.title}</div>
-                    <div className="text-sm text-muted-foreground">{value.desc}</div>
+                  <div key={value.title} className="text-center p-3 md:p-4 bg-muted/10 rounded-lg hover:bg-brand-green/10 transition-colors duration-300">
+                    <div className="text-sm md:text-base font-semibold text-brand-green mb-1">{value.title}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">{value.desc}</div>
                   </div>
                 ))}
               </div>

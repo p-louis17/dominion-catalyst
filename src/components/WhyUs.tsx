@@ -91,7 +91,7 @@ const WhyUs = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {[
                 { number: "50+", label: "Projects Completed", desc: "Successful implementations" },
                 { number: "100%", label: "Client Satisfaction", desc: "Happy partnerships" },
@@ -99,13 +99,13 @@ const WhyUs = () => {
                 { number: "24/7", label: "Support Available", desc: "Always here for you" }
               ].map((stat, index) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-brand-green mb-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-green mb-1 md:mb-2">
                     {stat.number}
                   </div>
-                  <div className="font-semibold text-foreground mb-1">
+                  <div className="text-sm md:text-base font-semibold text-foreground mb-1">
                     {stat.label}
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-xs md:text-sm text-muted-foreground">
                     {stat.desc}
                   </div>
                 </div>

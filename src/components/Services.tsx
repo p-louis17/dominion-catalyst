@@ -72,31 +72,31 @@ const Services = () => {
           </div>
 
           {/* Service Carousel */}
-          <div className="relative mb-16">
-            <div className="bg-service-card rounded-2xl p-8 lg:p-12 shadow-card border border-border">
+          <div className="relative mb-16 px-8 md:px-0">
+            <div className="bg-service-card rounded-2xl p-6 md:p-8 lg:p-12 shadow-card border border-border">
               <div className="max-w-4xl mx-auto">
                 {/* Icon */}
-                <div className="w-20 h-20 bg-brand-green/20 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                  <currentService.icon className="w-10 h-10 text-brand-green" />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-brand-green/20 rounded-xl flex items-center justify-center mb-4 md:mb-6 mx-auto">
+                  <currentService.icon className="w-8 h-8 md:w-10 md:h-10 text-brand-green" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center text-foreground">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-center text-foreground">
                   {currentService.title}
                 </h3>
-                <p className="text-lg text-muted-foreground mb-8 text-center leading-relaxed max-w-2xl mx-auto">
+                <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 text-center leading-relaxed max-w-2xl mx-auto">
                   {currentService.description}
                 </p>
 
                 {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                   <Button 
                     size="lg"
                     onClick={() => navigate('/services')}
-                    className="bg-brand-green hover:bg-brand-green-light text-white font-semibold"
+                    className="bg-brand-green hover:bg-brand-green-light text-white font-semibold text-sm md:text-base"
                   >
                     Learn More
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
                   </Button>
                   <Button 
                     size="lg"
@@ -104,7 +104,7 @@ const Services = () => {
                     onClick={() => {
                       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="border-2 border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-semibold"
+                    className="border-2 border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-semibold text-sm md:text-base"
                   >
                     Get Started
                   </Button>
@@ -115,17 +115,17 @@ const Services = () => {
             {/* Navigation Buttons */}
             <button
               onClick={prevService}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group"
+              className="absolute left-0 md:left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 p-2 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group z-10"
               aria-label="Previous service"
             >
-              <ChevronLeft className="w-6 h-6 text-brand-green group-hover:scale-110 transition-transform" />
+              <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-brand-green group-hover:scale-110 transition-transform" />
             </button>
             <button
               onClick={nextService}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group"
+              className="absolute right-0 md:right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 p-2 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group z-10"
               aria-label="Next service"
             >
-              <ChevronRight className="w-6 h-6 text-brand-green group-hover:scale-110 transition-transform" />
+              <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-brand-green group-hover:scale-110 transition-transform" />
             </button>
 
             {/* Indicators */}

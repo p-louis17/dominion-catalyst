@@ -116,18 +116,18 @@ const Contact = () => {
               </div>
 
               {/* Working hours */}
-              <div className="bg-service-card p-6 rounded-xl">
-                <h4 className="font-semibold text-brand-green mb-4">Working Hours</h4>
-                <div className="space-y-2 text-muted-foreground">
-                  <div className="flex justify-between">
+              <div className="bg-service-card p-4 md:p-6 rounded-xl">
+                <h4 className="text-sm md:text-base font-semibold text-brand-green mb-3 md:mb-4">Working Hours</h4>
+                <div className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                  <div className="flex justify-between gap-2">
                     <span>Monday - Friday</span>
-                    <span>8:00 AM - 6:00 PM</span>
+                    <span className="whitespace-nowrap">8:00 AM - 6:00 PM</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between gap-2">
                     <span>Saturday</span>
-                    <span>9:00 AM - 2:00 PM</span>
+                    <span className="whitespace-nowrap">9:00 AM - 2:00 PM</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between gap-2">
                     <span>Sunday</span>
                     <span>Closed</span>
                   </div>
@@ -136,8 +136,8 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-service-card p-8 rounded-xl">
-              <h3 className="text-xl font-bold mb-6 text-brand-green">Send us a Message</h3>
+            <div className="bg-service-card p-6 md:p-8 rounded-xl">
+              <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-brand-green">Send us a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
