@@ -1,16 +1,36 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (href: string) => {
+    setIsMenuOpen(false);
+    
+    if (location.pathname !== '/') {
+      // Navigate to home first, then scroll
+      navigate('/');
+      setTimeout(() => {
+        const section = document.querySelector(href);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Already on home, just scroll
+      const section = document.querySelector(href);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
-    }
+    handleNavClick('#contact');
   };
 
   const navigation = [
@@ -39,13 +59,13 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className="text-muted-foreground hover:text-brand-green transition-colors duration-300 font-medium"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -77,14 +97,13 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="text-muted-foreground hover:text-brand-green transition-colors duration-300 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-muted-foreground hover:text-brand-green transition-colors duration-300 font-medium text-left"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
               <Button 
                 onClick={scrollToContact}

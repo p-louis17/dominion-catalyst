@@ -1,6 +1,6 @@
 import { Globe, Palette, TrendingUp, Users, Camera, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import servicesIllustration from "@/assets/services-illustration.jpg";
 
@@ -43,6 +43,15 @@ const Services = () => {
   const prevService = () => {
     setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
   };
+
+  // Autoplay functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextService();
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   const currentService = services[currentIndex];
 
