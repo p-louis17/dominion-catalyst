@@ -6,58 +6,58 @@
 
 @layer base {
   :root {
-    /* Primary color palette - Dominion brand colors */
-    --background: 196 68% 24%;  /* Dominion blue #144C68 */
-    --foreground: 0 0% 100%;    /* White */
-
-    --card: 196 60% 28%;  /* Slightly lighter blue for cards */
-    --card-foreground: 0 0% 100%;
-
-    --popover: 196 60% 28%;
-    --popover-foreground: 0 0% 100%;
-
-    /* Green accent system - Dominion brand greens */
-    --primary: 172 100% 30%;  /* Green 1 #009783 */
+    --background: 220 26% 14%;
+    --foreground: 210 40% 98%;
+    --card: 220 24% 18%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 26% 14%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 168 76% 42%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 196 55% 30%;  /* Muted blue */
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 196 50% 32%;
-    --muted-foreground: 196 20% 70%;
-
-    --accent: 149 69% 47%;  /* Green 2 #25CB7B */
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 196 40% 35%;
-    --input: 196 40% 35%;
-    --ring: 172 100% 30%;
-
+    --secondary: 220 20% 25%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 17% 32%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 180 82% 55%;
+    --accent-foreground: 220 26% 14%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 20% 28%;
+    --input: 220 20% 25%;
+    --ring: 168 76% 42%;
+    --chart-1: 168 76% 42%;
+    --chart-2: 180 82% 55%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 200 80% 50%;
+    --chart-5: 280 65% 60%;
     --radius: 0.75rem;
-
-    /* Custom Dominion brand colors */
-    --hero-bg: 196 68% 24%;  /* Dominion blue */
-    --brand-green: 172 100% 30%;  /* Green 1 #009783 */
-    --brand-green-light: 149 69% 47%;  /* Green 2 #25CB7B */
-    --text-green: 172 100% 30%;  /* Green 1 for text */
-    --consulting-teal: 196 68% 24%;  /* Dominion blue */
-    --service-card: 196 60% 28%;  /* Service card background */
     
-    /* Gradients using brand colors */
-    --gradient-hero: linear-gradient(135deg, hsl(196 68% 24%), hsl(196 60% 28%));
-    --gradient-green: linear-gradient(135deg, hsl(172 100% 30%), hsl(149 69% 47%));
-    --gradient-card: linear-gradient(135deg, hsl(196 60% 28%), hsl(196 50% 32%));
+    /* Dominion Consulting brand colors - Refreshed palette */
+    --brand-green: 168 76% 42%;
+    --brand-green-light: 168 76% 52%;
+    --brand-green-dark: 168 76% 32%;
+    --brand-green-foreground: 0 0% 100%;
+    --consulting-navy: 220 26% 14%;
+    --consulting-teal: 180 82% 55%;
+    --consulting-accent: 195 92% 58%;
     
-    /* Shadows with green glow */
-    --shadow-green: 0 10px 30px -10px hsl(172 100% 30% / 0.3);
-    --shadow-elegant: 0 25px 50px -12px hsl(196 68% 20% / 0.6);
+    /* Additional theme colors */
+    --service-card: 220 24% 18%;
+    --service-card-hover: 220 24% 22%;
     
-    /* Animation variables */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: all 0.2s ease-out;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(168 76% 42%), hsl(180 82% 55%));
+    --gradient-secondary: linear-gradient(180deg, hsl(220 26% 14%), hsl(220 24% 10%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 26% 14% / 0.95), hsl(168 76% 42% / 0.1));
+    
+    /* Custom shadows */
+    --shadow-glow: 0 0 40px hsla(168, 76%, 42%, 0.3);
+    --shadow-card: 0 8px 32px hsla(168, 76%, 42%, 0.12);
+    --shadow-elevated: 0 20px 60px hsla(168, 76%, 42%, 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -76,17 +76,37 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Light mode variant - using lighter Dominion brand colors */
   .light {
-    --background: 0 0% 100%;
-    --foreground: 196 68% 24%;
-    --card: 0 0% 98%;
-    --card-foreground: 196 68% 24%;
-    --consulting-teal: 196 68% 24%;
-    --service-card: 0 0% 97%;
-    --hero-bg: 196 20% 95%;
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(196 20% 95%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 98%), hsl(196 10% 96%));
+    --background: 210 30% 98%;
+    --foreground: 220 26% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+    --primary: 168 76% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 30% 94%;
+    --secondary-foreground: 220 26% 14%;
+    --muted: 210 30% 94%;
+    --muted-foreground: 220 16% 40%;
+    --accent: 180 82% 55%;
+    --accent-foreground: 220 26% 14%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 168 76% 42%;
+    
+    /* Dominion Consulting brand colors for light mode */
+    --brand-green: 168 76% 42%;
+    --brand-green-light: 168 76% 52%;
+    --brand-green-dark: 168 76% 32%;
+    --brand-green-foreground: 0 0% 100%;
+    --consulting-navy: 220 26% 14%;
+    --consulting-teal: 180 82% 55%;
+    --consulting-accent: 195 92% 58%;
+    --service-card: 0 0% 100%;
+    --service-card-hover: 210 30% 98%;
   }
 }
 
