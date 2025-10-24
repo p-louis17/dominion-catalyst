@@ -35,7 +35,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Slideshow Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {slides.map((slide, index) => (
@@ -92,8 +92,8 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-        <div className="max-w-4xl">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-20 flex items-center min-h-[100vh]">
+        <div className="max-w-4xl w-full">
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-brand-green/20 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full mb-4 md:mb-6 animate-fade-in border border-brand-green/30">
             <Star className="w-3 h-3 md:w-4 md:h-4 text-brand-green fill-brand-green" />
@@ -125,7 +125,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={scrollToServices}
-              className="border-2 border-white/80 text-white hover:bg-white hover:text-consulting-navy font-semibold text-base md:text-lg px-6 py-5 md:px-8 md:py-6 backdrop-blur-sm transition-all duration-300"
+              className="border-2 border-brand-green bg-brand-green/10 text-brand-green hover:bg-brand-green hover:text-white font-semibold text-base md:text-lg px-6 py-5 md:px-8 md:py-6 backdrop-blur-sm transition-all duration-300"
             >
               Explore Our Services
             </Button>
