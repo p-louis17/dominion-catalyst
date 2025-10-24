@@ -37,18 +37,22 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Slideshow Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
+              index === currentSlide 
+                ? 'translate-x-0' 
+                : index < currentSlide 
+                  ? '-translate-x-full' 
+                  : 'translate-x-full'
             }`}
           >
             <img
               src={slide}
               alt={`Hero slide ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-consulting-navy/95 via-consulting-navy/80 to-transparent"></div>
           </div>

@@ -6,24 +6,24 @@
 
 @layer base {
   :root {
-    --background: 220 26% 14%;
-    --foreground: 210 40% 98%;
-    --card: 220 24% 18%;
-    --card-foreground: 210 40% 98%;
-    --popover: 220 26% 14%;
-    --popover-foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
     --primary: 168 76% 42%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 20% 25%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 220 17% 32%;
-    --muted-foreground: 215 16% 65%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 180 82% 55%;
-    --accent-foreground: 220 26% 14%;
+    --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
-    --border: 220 20% 28%;
-    --input: 220 20% 25%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
     --ring: 168 76% 42%;
     --chart-1: 168 76% 42%;
     --chart-2: 180 82% 55%;
@@ -42,8 +42,8 @@
     --consulting-accent: 195 92% 58%;
     
     /* Additional theme colors */
-    --service-card: 220 24% 18%;
-    --service-card-hover: 220 24% 22%;
+    --service-card: 0 0% 100%;
+    --service-card-hover: 210 30% 98%;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(168 76% 42%), hsl(180 82% 55%));
@@ -76,28 +76,28 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .light {
-    --background: 210 30% 98%;
-    --foreground: 220 26% 14%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 26% 14%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 26% 14%;
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
     --primary: 168 76% 42%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 30% 94%;
-    --secondary-foreground: 220 26% 14%;
-    --muted: 210 30% 94%;
-    --muted-foreground: 220 16% 40%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
     --accent: 180 82% 55%;
-    --accent-foreground: 220 26% 14%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 210 30% 88%;
-    --input: 210 30% 88%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
     --ring: 168 76% 42%;
     
-    /* Dominion Consulting brand colors for light mode */
+    /* Dominion Consulting brand colors for dark mode */
     --brand-green: 168 76% 42%;
     --brand-green-light: 168 76% 52%;
     --brand-green-dark: 168 76% 32%;
@@ -105,8 +105,8 @@
     --consulting-navy: 220 26% 14%;
     --consulting-teal: 180 82% 55%;
     --consulting-accent: 195 92% 58%;
-    --service-card: 0 0% 100%;
-    --service-card-hover: 210 30% 98%;
+    --service-card: 222.2 84% 4.9%;
+    --service-card-hover: 217.2 32.6% 20%;
   }
 }
 
