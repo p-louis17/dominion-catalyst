@@ -52,7 +52,7 @@ const Hero = () => {
             <img
               src={slide}
               alt={`Hero slide ${index + 1}`}
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-contain md:object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-consulting-navy/95 via-consulting-navy/80 to-transparent"></div>
           </div>
