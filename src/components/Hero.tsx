@@ -62,14 +62,14 @@ const Hero = () => {
       {/* Slide Navigation */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 md:left-4 z-20 p-2 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group"
+        className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-white group-hover:scale-110 transition-transform" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-2 md:right-4 z-20 p-2 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group"
+        className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group"
         aria-label="Next slide"
       >
         <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-white group-hover:scale-110 transition-transform" />

@@ -1,12 +1,12 @@
 import { Globe, Palette, TrendingUp, Users, Camera, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import servicesIllustration from "@/assets/services-illustration.jpg";
 
 const Services = () => {
   const navigate = useNavigate();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const services = [
     {
@@ -36,24 +36,33 @@ const Services = () => {
     }
   ];
 
-  const nextService = () => {
-    setCurrentIndex((prev) => (prev + 1) % services.length);
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
   };
 
-  const prevService = () => {
-    setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
   };
 
-  // Autoplay functionality
+  // Auto-scroll functionality
   useEffect(() => {
     const interval = setInterval(() => {
-      nextService();
-    }, 5000); // Change slide every 5 seconds
+      if (scrollContainerRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+        }
+      }
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
-
-  const currentService = services[currentIndex];
+  }, []);
 
   return (
     <section id="services" className="py-20 bg-background">
@@ -71,76 +80,72 @@ const Services = () => {
             </p>
           </div>
 
-          {/* Service Carousel */}
-          <div className="relative mb-16 px-8 md:px-0">
-            <div className="bg-service-card rounded-2xl p-6 md:p-8 lg:p-12 shadow-card border border-border">
-              <div className="max-w-4xl mx-auto">
-                {/* Icon */}
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-brand-green/20 rounded-xl flex items-center justify-center mb-4 md:mb-6 mx-auto">
-                  <currentService.icon className="w-8 h-8 md:w-10 md:h-10 text-brand-green" />
-                </div>
-
-                {/* Content */}
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-center text-foreground">
-                  {currentService.title}
-                </h3>
-                <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 text-center leading-relaxed max-w-2xl mx-auto">
-                  {currentService.description}
-                </p>
-
-                {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                  <Button 
-                    size="lg"
-                    onClick={() => navigate('/services')}
-                    className="bg-brand-green hover:bg-brand-green-light text-white font-semibold text-sm md:text-base"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
-                  </Button>
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    onClick={() => {
-                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="border-2 border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-semibold text-sm md:text-base"
-                  >
-                    Get Started
-                  </Button>
-                </div>
-              </div>
-            </div>
-
+          {/* Service Carousel - 3 items visible */}
+          <div className="relative mb-16">
             {/* Navigation Buttons */}
             <button
-              onClick={prevService}
-              className="absolute left-0 md:left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 p-2 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group z-10"
-              aria-label="Previous service"
+              onClick={scrollLeft}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 p-2 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group z-10"
+              aria-label="Previous services"
             >
               <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-brand-green group-hover:scale-110 transition-transform" />
             </button>
             <button
-              onClick={nextService}
-              className="absolute right-0 md:right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 p-2 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group z-10"
-              aria-label="Next service"
+              onClick={scrollRight}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 p-2 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group z-10"
+              aria-label="Next services"
             >
               <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-brand-green group-hover:scale-110 transition-transform" />
             </button>
 
-            {/* Indicators */}
-            <div className="flex justify-center gap-2 mt-8">
-              {services.map((_, index) => (
-                <button
+            {/* Scrollable Container */}
+            <div 
+              ref={scrollContainerRef}
+              className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth px-2"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {services.map((service, index) => (
+                <div 
                   key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    index === currentIndex
-                      ? 'w-8 bg-brand-green'
-                      : 'w-2 bg-muted hover:bg-brand-green/50'
-                  }`}
-                  aria-label={`Go to service ${index + 1}`}
-                />
+                  className="flex-none w-full md:w-[calc(33.333%-16px)] snap-start"
+                >
+                  <div className="bg-service-card rounded-2xl p-6 md:p-8 shadow-card border border-border h-full flex flex-col">
+                    {/* Icon */}
+                    <div className="w-16 h-16 bg-brand-green/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                      <service.icon className="w-8 h-8 text-brand-green" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-xl md:text-2xl font-bold mb-3 text-center text-foreground">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-muted-foreground mb-6 text-center leading-relaxed flex-grow">
+                      {service.description}
+                    </p>
+
+                    {/* CTAs */}
+                    <div className="flex flex-col gap-3">
+                      <Button 
+                        size="default"
+                        onClick={() => navigate('/services')}
+                        className="bg-brand-green hover:bg-brand-green-light text-white font-semibold text-sm w-full"
+                      >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                      <Button 
+                        size="default"
+                        variant="outline"
+                        onClick={() => {
+                          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className="border-2 border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-semibold text-sm w-full"
+                      >
+                        Get Started
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
