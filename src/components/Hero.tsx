@@ -92,7 +92,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-20 flex items-center h-full">
+      <div className="container relative z-10 mx-auto px-12 sm:px-6 lg:px-8 py-4 md:py-20 flex items-center h-full">
         <div className="max-w-4xl w-full">
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-brand-green/20 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full mb-3 md:mb-6 animate-fade-in border border-brand-green/30">
