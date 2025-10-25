@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { useState, useEffect } from "react";
 import heroSlide1 from "@/assets/hero-slide-1.jpg";
 import heroSlide2 from "@/assets/hero-slide-2.jpg";
@@ -17,14 +17,6 @@ const Hero = () => {
 
     return () => clearInterval(timer);
   }, []);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
 
   const scrollToServices = () => {
     document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
@@ -59,22 +51,6 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Slide Navigation */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-1 top-[45%] md:top-1/2 md:-translate-y-1/2 z-20 p-1.5 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-white group-hover:scale-110 transition-transform" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-1 top-[45%] md:top-1/2 md:-translate-y-1/2 z-20 p-1.5 md:p-3 rounded-full bg-brand-green/20 hover:bg-brand-green/40 backdrop-blur-sm transition-all duration-300 group"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-white group-hover:scale-110 transition-transform" />
-      </button>
-
       {/* Slide Indicators */}
       <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
         {slides.map((_, index) => (
@@ -92,7 +68,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-12 sm:px-6 lg:px-8 py-4 md:py-20 flex items-center h-full">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-20 flex items-center h-full">
         <div className="max-w-4xl w-full">
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-brand-green/20 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full mb-3 md:mb-6 animate-fade-in border border-brand-green/30">
